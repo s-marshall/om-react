@@ -1,6 +1,6 @@
 # OM-REACT
 
-Om versions of three examples on [Facebook's React](facebook.github.io/react/) page.
+Om versions of three examples on [Facebook's React](https://facebook.github.io/react) page.
 
 [Try it now!](https://mighty-crag-1505.herokuapp.com)
 
