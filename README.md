@@ -1,6 +1,6 @@
 # todolist-react
 
-Three examples from Facebook's React page.
+Om versions of three examples on [Facebook's React](https://facebook.github.io/react/) page.
 
 ## Development
 
