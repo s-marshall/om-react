@@ -1,5 +1,6 @@
 # todolist-react
 
+Three examples from Facebook's React page.
 
 ## Development
 
