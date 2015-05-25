@@ -2,7 +2,7 @@
 
 Om versions of three examples on [Facebook's React](https://facebook.github.io/react/) page.
 
-Version running on [Heroku](https://mighty-crag-1505.herokuapp.com)
+[Try it now!](https://mighty-crag-1505.herokuapp.com)
 
 ## Development
 
