@@ -16,10 +16,11 @@
                   (dom/h3 nil (:hello state)))))
 ; Timer
 
-(def timer-app-state (atom {:secondsElapsed 0}))
+(def app-state (atom {:secondsElapsed 0}))
 
-(defn tick [data]
-  (om/update! data [:secondsElapsed] (inc (@data :secondsElapsed))))
+(defn tick [owner]
+  (let [value (om/get-state owner :secondsElapsed)]
+    (om/set-state! owner :secondsElapsed (inc value))))
 
 (defn seconds-view [seconds owner]
   (reify
@@ -29,15 +30,19 @@
 
 (defn timer-view [data owner]
   (reify
+    om/IInitState
+    (init-state [_]
+                {:secondsElapsed 0})
+
     om/IDidMount
     (did-mount [_]
-                (js/setInterval #(tick data) 1000))
+                (js/setInterval #(tick owner) 1000))
 
-    om/IRender
-    (render [this]
+    om/IRenderState
+    (render-state [_ state]
             (dom/div #js {:className "timer"}
             (dom/h1 nil "The Timer")
-            (dom/h2 nil (om/build seconds-view (:secondsElapsed data)))))))
+            (dom/h2 nil (om/build seconds-view (:secondsElapsed state) {:init-state state}))))))
 
 ; TODO list
 
