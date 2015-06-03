@@ -6,7 +6,7 @@
 (def app-state (atom {:greeting "Hello "
                       :secondsElapsed 0
                       :items [] :index 1 :text ""}))
-(enable-console-print!)
+
 (defn hello-view [cursor owner]
   (reify
     om/IInitState
@@ -18,7 +18,7 @@
                   (dom/h2 nil "A Simple Component"
                           (dom/table nil
                                      (dom/td nil
-                          (dom/textarea #js {:readonly true :rows "15" :cols "50"}
+                          (dom/textarea #js {:disabled true :rows "15" :cols "50"}
                                         "(def app-state (atom {:greeting \"Hello \"
                       :secondsElapsed 0
                       :items [] :index 1 :text \"\"}))
@@ -60,7 +60,7 @@
             (dom/h2 nil "A Stateful Component"
                     (dom/table nil
                                (dom/td nil
-                                       (dom/textarea #js {:readonly true :rows "25" :cols "60"}
+                                       (dom/textarea #js {:disabled true :rows "25" :cols "60"}
                                                      "(defn tick [owner]
   (let [value (om/get-state owner :secondsElapsed)]
     (om/set-state! owner :secondsElapsed (inc value))))
@@ -115,7 +115,7 @@
                   (dom/h2 nil "An Application"
                           (dom/table nil
                                      (dom/td nil
-                                             (dom/textarea #js {:readonly true :rows "37" :cols "60"} "(defn add-item [cursor owner]
+                                             (dom/textarea #js {:disabled true :rows "37" :cols "60"} "(defn add-item [cursor owner]
   (let [new-item (-> (om/get-node owner \"new-item\")
                         .-value)]
     (when (not= \"\" new-item)
@@ -167,7 +167,7 @@
                       (str "Add item #" (:index cursor)))))))
           (dom/h2 nil "The Rest"
                   (dom/p nil
-                  (dom/textarea #js {:readonly true :rows "23" :cols "60"}
+                  (dom/textarea #js {:disabled true :rows "23" :cols "60"}
                                         "(defn all-views
   [cursor owner]
   (reify

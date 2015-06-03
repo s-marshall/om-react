@@ -1,3 +1,8 @@
+; > lein repl
+; (run)
+; (browser-repl)
+; localhost:10555
+
 (defproject todolist-react "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
